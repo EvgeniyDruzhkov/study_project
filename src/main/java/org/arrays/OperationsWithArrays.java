@@ -1,17 +1,15 @@
 package org.arrays;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class OperationsWithArrays {
 
     public static void main(String[] args) {
 
-        System.out.println("Enter the size of the array: ");
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-
-        printArray(sortIntegers(getIntegers(number)));
+        printArray(sortIntegers(getIntegers(readInteger())));
+        System.out.println("Min element " + findMin(readElements(readInteger())));
 
     }
 
@@ -49,5 +47,22 @@ public class OperationsWithArrays {
         }
     }
 
+    private static int readInteger() {
+        System.out.println("Enter the size of the array: ");
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
 
+    private static int[] readElements(int num) {
+        return getIntegers(num);
+    }
+
+    private static int findMin(int[] arr) {
+
+        return Arrays.stream(arr)
+                .filter(Objects::nonNull)
+                .filter(s -> arr.length > 1)
+                .min()
+                .getAsInt();
+    }
 }
