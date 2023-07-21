@@ -6,14 +6,6 @@ import java.util.Scanner;
 
 public class OperationsWithArrays {
 
-    public static void main(String[] args) {
-
-        printArray(sortIntegers(getIntegers(readInteger())));
-        System.out.println("Min element " + findMin(readElements(readInteger())));
-
-    }
-
-
     public static int[] getIntegers(int size) {
         int[] intArray = new int[size];
 
@@ -39,7 +31,7 @@ public class OperationsWithArrays {
         return arr;
     }
 
-    private static void reverse(int[] arr) {
+    public static void reverse(int[] arr) {
         for (int i = 0; i < arr.length / 2; i++) {
             int temp = arr[i];
             arr[i] = arr[arr.length - i - 1];
@@ -47,18 +39,17 @@ public class OperationsWithArrays {
         }
     }
 
-    private static int readInteger() {
+    public static int readInteger() {
         System.out.println("Enter the size of the array: ");
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
 
-    private static int[] readElements(int num) {
+    public static int[] readElements(int num) {
         return getIntegers(num);
     }
 
-    private static int findMin(int[] arr) {
-
+    public static int findMin(int[] arr) {
         return Arrays.stream(arr)
                 .filter(Objects::nonNull)
                 .filter(s -> arr.length > 1)
