@@ -37,12 +37,17 @@ public class OperationsWithArrays {
 
     public static int[] sortIntegers(int[] arr) {
         Arrays.sort(arr);
-        int[] revArr = new int[arr.length];
-
-        for (int i = 1; i < arr.length + 1; i++) {
-            revArr[i - 1] = arr[arr.length - i];
-        }
-
-        return revArr;
+        reverse(arr);
+        return arr;
     }
+
+    private static void reverse(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = temp;
+        }
+    }
+
+
 }
