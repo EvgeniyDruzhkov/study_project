@@ -5,6 +5,14 @@ public class Hamburger {
     private String meat;
     private double price;
     private String breadRollType;
+    private String addition1Name;
+    private double additional1Price;
+    private String addition2Name;
+    private double additional2Price;
+    private String addition3Name;
+    private double additional3Price;
+    private String addition4Name;
+    private double additional4Price;
 
     public Hamburger(String name, String meat, double price, String breadRollType) {
         this.name = name;
@@ -16,15 +24,6 @@ public class Hamburger {
 
     public Hamburger() {
     }
-
-    private String addition1Name;
-    private double additional1Price;
-    private String addition2Name;
-    private double additional2Price;
-    private String addition3Name;
-    private double additional3Price;
-    private String addition4Name;
-    private double additional4Price;
 
     public void addHamburgerAddition1(String addName, double price) {
         name += addName;
@@ -54,4 +53,3 @@ public class Hamburger {
         return price;
     }
 }
-
